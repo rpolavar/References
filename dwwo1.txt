@@ -1,0 +1,22 @@
+Project	Action	Location	Notes	Date	Start	End	Duration
+GAN	Reading	Work	"Studying Laplace transforms. We have worked out two examples with the help of Kahn Academy: f(t) =  1 and f(t) = e^(at).  Then, we have worked out sine(at).  There is a a lot here.  I would like to take a break."	Jan 13, 2017	16:56:43	17:59:35	3771
+GAN	Reading	Home	Laplace continued.	Jan 14, 2017	09:23:36	09:34:39	663
+GAN	Writing	Home	Laplace continued.	Jan 14, 2017	10:27:30	10:31:36	246
+GAN	Writing	Home	Preparing the text file with what I have learned: c:\z\laplace.txt.	Jan 14, 2017	12:24:53	12:56:21	1888
+GAN	Writing and Listening	Home	Still learning Laplace transforms.	Jan 14, 2017	14:10:52	15:04:52	3240
+Piano			Up to T1:21	Jan 14, 2017	17:35:42	18:18:15	2552
+Piano			t1: up to 25	Jan 15, 2017	16:11:07	16:46:50	2143
+GAN	RTLW	H	Continued Laplace transforms.	Jan 15, 2017	16:54:31	17:47:12	3161
+Git and Github	Learning one more time!	H	Learned a few more things. Updated c:\rp\gitcommands.txt.	Jan 15, 2017	20:28:20	20:55:45	1644
+GAN	Rewriting	H	Working on Laplace transform for sine(at).	Jan 15, 2017	21:12:18	21:41:12	1733
+GAN	Re-listening	H	Laplace transform videos from Khan Academy.	Jan 15, 2017	21:50:16	22:13:00	1363
+GAN	Writing	H	Solving more examples of Laplace transforms.	Jan 16, 2017	04:42:00	05:04:01	1321
+Piano			T1: up to 25.	Jan 16, 2017	05:14:07	05:35:35	1288
+GAN	W	In the cab	Writing down solutions to some more problems.	Jan 16, 2017	08:27:04	08:43:32	987
+Piano			T1: up to 25.	Jan 17, 2017	07:07:14	07:26:50	1176
+ARIMA	Reading	Work	Introduction to Forecasting with ARIMA in R http://www.kdnuggets.com/2017/01/datascience-introduction-forecasting-arima-r.html?utm_content=buffer048a8&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer	Jan 18, 2017	11:06:49	12:20:30	4421
+Interviews	Reading	Work	10 Tips to Improve your Data Science Interview http://www.kdnuggets.com/2016/11/tips-improve-your-data-science-interview.html	Jan 18, 2017	19:00:54	19:07:19	385
+ML	Reading	Work	Rules of ML paper from Google See h:\References\rules_of_ml.pdf.	Jan 19, 2017	18:31:03	18:55:21	1457
+DS	Watching	Work	EDA: 	Jan 27, 2017	11:38:42	11:51:02	739
+DS	Watching and reading	Work	EDA: Exploratory Data Analysis: Clustering Case Study - YouTube 	Jan 27, 2017	14:34:00	14:45:07	667
+DS	Watching and reading	work	EDA: One more video! Exploratory Data Analysis - YouTube https://www.youtube.com/watch?v=zHcQPKP6NpM Todo: EDA book. Of course, clustering techniques.	Jan 27, 2017	15:02:45	15:17:52	907
