@@ -1,0 +1,38 @@
+Started with Peirce's criterion - Wikipedia
+Then, moved onto Robust statistics - Wikipedia
+
+1. One outlier can mask the other outlier.
+2. The basic tools used to describe and measure robustness are, the breakdown point, the influence function and the sensitivity curve.
+3. Location estimators are about central tendency. Median is a good example.
+Scale estimators are about dispersion.  IQR and MAD are the examples.  IQR is a trimmed example.  Interdecile range is an example for 10% trimming. Sigma = 1.4826 MAD.
+MAD is inefficient (37% of sd of Normal distribution).  MAD does not take skewness into consideration.
+There exists a package for R called robustbase.  This covers some of the robust estimators.
+Q_n and S_n seem to be better than MAD.  To figure out some more details of these estimators, see:
+data transformation - How to calculate Rousseeuw’s and Croux’ (1993) Qn scale estimator for large samples? - Cross Validated
+http://stats.stackexchange.com/questions/3989/how-to-calculate-rousseeuw-s-and-croux-1993-qn-scale-estimator-for-large-samp
+The bound is N log N.  It seems to me that I need to figure out something similar to merge sort.  Divide-and-conquer.
+I have come across q_n and s_n in Robust measures of scale - Wikipedia.
+The trimmed mean of 25% is called interquartile mean.
+The median can be regarded as a fully truncated mean and is most robust. 
+Discarding only the maximum and minimum is known as the modified mean, particularly in management statistics.   This is also known as the Olympic average (for example in US agriculture, like the Average Crop Revenue Election), due to its use in Olympic events, such as the ISU Judging System in figure skating, to make the score robust to a single outlier judge.
+Interpolating is used if necessary.  15% of 10 observations requires linnear interpolation of 10% trimming and 20% trimming.
+Some of the above information is  from Truncated mean - Wikipedia
+Winsorized mean replaces extreme values with nearby values.  See Winsorized mean - Wikipedia
+scipy.stats.mstats.winsorize(a, limits=0.05)
+Clipping from signal processing is similar to winsorizing.
+In a trimmed estimator, the extreme values are discarded; in a winsorized estimator, the extreme values are instead replaced by certain percentiles (the trimmed minimum and maximum).
+
+Q–Q plots are commonly used to compare a data set to a theoretical model.   This can provide an assessment of "goodness of fit" that is graphical, rather than reducing to a numerical summary. Q–Q plots are also used to compare two theoretical distributions to each other.
+A Q–Q plot is a plot of the quantiles of two distributions against each other, or a plot based on estimates of the quantiles. 
+Quantile function is the inverse of CDF.
+Q-Q plot is a 45 degree line if both the distributions are identicle.  If it is flatter than 45 degree line, the distribution represented on the y-axis is less disperssed.
+See Q–Q plot - Wikipedia
+P-P plots are plotted probabilities against probabilities.  Q-Q plots do the same with quantiles.
+Trimean is given by the following:
+TM={\frac {Q_{1}+2Q_{2}+Q_{3}}{4}}
+It can be written as the average between median and midhinge:
+TM={\frac {1}{2}}\left(Q_{2}+{\frac {Q_{1}+Q_{3}}{2}}\right)}
+The midhinge is the average of the first and third quartiles and is thus a measure of location. 
+M-estimators are the minima of the sum of the functions defined on the data.  Least square estimation is a good example.  
+More generally, an M-estimator may be defined to be a zero of an estimating function.  This estimating function is often the derivative of another statistical function. For example, a maximum-likelihood estimate is often defined to be a zero of the derivative of the likelihood function with respect to the parameter; thus, a maximum-likelihood estimator is often a critical point of the score function.
+See M-estimator - Wikipedia
