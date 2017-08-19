@@ -1,0 +1,64 @@
+Bellman-Ford algorithm:
+
+Why Belman-Ford?
+To find the shortest distances from a given vertex to all vertices.
+There are four similar problems when it comes to measuring distances in graphs:
+a. Single source shortest path problems
+b. Single destination shortest path problems
+c. Single pair shortest path problem
+d. All pairs shortest paths problem
+
+Lessons learned:
+a. Python array initialization:
+  self.edges = [Edge(0, 0, 0) for i in range(e)]
+b. To get Integer.MAX_INT in Python, we could use either
+sys.maxsize
+or
+float('Inf')
+c. Bellman-Ford is good to detect negative cycles:
+def doesNegativeCycleExist(g, dist):
+ for x in g.edges:
+  p = x.src
+  q = x.dest
+  r = x.weight
+  if dist[p] != float('Inf') and dist[p] + r < dist[q]:
+   print('There exists a negative cycle in the graph.')
+   return True
+ return False
+d. System.out.print in Python is print('Some stuff ', end='').
+e. To keep track of all paths, we use dict in Python:
+ paths = {}
+The keys are tuples of vertices of paths and values are corresponding weights.  The following code adds a new path to the dictionary:
+    keys = list(paths.keys())
+    for s in keys:
+     if s[-1] == p:
+      paths[tuple(list(s) + [q])] = paths[s] + r
+The above code is quite inefficient.  For now, it works!
+f. Lists cannot be keys in a dict.  Consequently, tuples are used.
+g. Complexity is O(v \times e)
+h. Relaxation: An approximation to the correct distance is gradually replaced by more accurate values until eventually reaching the optimum solution. 
+i. It is much easier to keep track of predecessors and construct path with the help of them.  Whenever a distance is updated, update its corresponding predecessor.
+Complete code can be found in bellmanFord.py.
+
+
+Binary Search:
+
+Writing binary search can be a bit tricky.
+Lessons learned:
+a. l can become greater than r.  Must check for this condition and return -1.
+b. To take care of some concerns, m should be written as (r-l)//2 + l.
+c. Binary search with rotation requires normal binary search.  And we need to see whether the element may fall in v-shaped or inverted v-shaped area.  If so, we need to call the binary search function with rotation.  Check the following code:
+ if a[m] < v:
+  if v > a[r]:
+   return binarySearchWithRotation(a, l, m-1, v)
+  return binarySearch(a, m+1, r, v)
+ if a[m] > v:
+  if v < a[l]:
+   return binarySearchWithRotation(a, m+1, r, v)
+  return binarySearch(a, l, m-1, v)
+d. Rotating a sorted array can be accomplished by this:
+b = [a[(i+14)%30] for i in range(30)]
+
+The entire code can be found in binarySearch.py.
+Insertion sort:
+In fact, elements A[1. .j-1] are the elements originally in positions 1 through j-1, but now in sorted order. 
