@@ -1,0 +1,8 @@
+1. Data engineering is neglected.  Need to learn a few things in this area.
+2. How does SVM algorithm figure out in what dimensional plain the classes are separated?
+3. Can Perseptron mimic SVM and solve the problem of deeling the data that is not linearly separable?
+a. Kernel perceptrons seem to answer the question to some extent.  Smola and others wrote a paper in 2004 showing that Kernel perceptrons SVMs are similar.  In this context, I have also come across Forgetron which is better than kernel perceptron.  Mostly from Wikipedia.  One line from Wikipedia article on perceptrons is:
+"The perceptron of optimal stability, together with the kernel trick, are the conceptual foundations of the support vector machine."
+4. What is the connection between feed-farward neural networks and back propegation?
+5. I must implement SVMs.
+6. I need to read the book on EDA.
