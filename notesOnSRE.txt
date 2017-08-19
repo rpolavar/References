@@ -1,0 +1,22 @@
+SREcon17 Europe | USENIX
+https://www.usenix.org/conference/srecon17europe
+In general, an SRE team is responsible for 
+availability (mean time between failures and mean time to repair), 
+latency (netflow?), 
+performance (measuring throughput), 
+efficiency (measuring resource utilization), 
+change management (progressive rollouts, identifying incidents to changes and ability to rollback), 
+monitoring (alerts, tickets and logging), 
+emergency response (MTTR and playbooks), and 
+capacity planning (forecasting, load testing and provisioning). 
+Capability Maturity Model
+Dr. David J. Smith. Reliability, Maintainability and Risk (eighth ed.). 
+Jones, James V., Integrated Logistics Support Handbook, McGraw–Hill Professional, 3rd edition (June 8, 2006), 
+
+The following is taken from the article titled:
+Are site reliability engineers the next data scientists? | TechCrunch
+https://techcrunch.com/2016/03/02/are-site-reliability-engineers-the-next-data-scientists/
+¦ Containers. Google’s widespread internal adoption of lightweight OS containers inspired the rapidly growing movement around Docker, driving the company at the center of this phenomenon to $162 million in funding and prompting the creation of industry-wide collaborations like the Open Container Project.
+¦ Cluster management. Google’s internal Borg project similarly inspired two fast-growing open source communities around the Kubernetes and Mesos cluster resource management frameworks, setting the stage for efforts like the Cloud Native Computing Foundation.
+¦ Analytics. Google’s data processing innovations inspired Yahoo’s early investments into Hadoop, which has in turn spawned a whole ecosystem of modern big data technologies and commercial players, including Cloudera and Hortonworks.
+¦ Microservices. Amazon and Netflix were early innovators and evangelists in the practice of designing software applications as suites of independently deployable services, an approach that is also being widely adopted in industry in the form of products like Lightbend’s Reactive Platform (formerly Typsafe).

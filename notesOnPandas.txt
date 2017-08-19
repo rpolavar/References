@@ -1,0 +1,334 @@
+import numpy as np 
+
+ ar1=np.array([0,1,2,3])# 1 dimensional array 
+ar2=np.array ([[0,3,5],[2,8,7]]) # 2D array 
+ar1 #Out[4]: array([0, 1, 2, 3]) 
+ar2 #Out[5]: array([[0, 3, 5],  [2, 8, 7]])  
+
+ar2.shape #Out[5]: (2, 3)  
+ar2.ndim #Out[7]: 2  
+
+
+ar3=np.arange(12) 
+ar3 #Out[10]: array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) 
+ar4=np.arange(3,10,3)
+ar4 #Out[11]: array([3, 6, 9])  
+
+ar5=np.linspace(0,2.0/3,4) 
+ar5 #Out[13]:array([ 0., 0.22222222, 0.44444444, 0.66666667])  
+  
+ar7=np.ones((2,3,2)); 
+ar7 #Out[14]: array([[[ 1., 1.],  [ 1., 1.],  [ 1., 1.]],  [[ 1., 1.],  [ 1., 1.],  [ 1., 1.]]])  
+ np.zeros((3,3)
+np.random.rand() #Prints a number between 0 and 1. uniform distribution
+np.random.randn()#normal distribution
+np.eye(4) #Identity matrix of 4X4.
+np.empty((3,3)) #A matrix of near-zeros
+ar8=np.zeros((4,2));
+ar8 #Out[15]: array([[ 0., 0.],  [ 0., 0.],   [ 0., 0.],  [ 0., 0.]])  
+ar9 = np.eye(3);
+ar9 #Out[17]: array([[ 1., 0., 0.],  [ 0., 1., 0.],  [ 0., 0., 1.]])  
+ar10=np.diag((2,1,4,6));
+ar10 #Out[18]: array([[2, 0, 0, 0],  [0, 1, 0, 0],  [0, 0, 4, 0],  [0, 0, 0, 6]])  
+
+np.random.seed(100) # Set seed  
+ar11=np.random.rand(3); 
+ar11 #Out[19]: array([ 0.54340494, 0.27836939, 0.42451759]) 
+ar12=np.random.rand(5); 
+ar12 #Out[20]: array([ 0.35467445, -0.78606433, -0.2318722 , 0.20797568, 0.93580797])  
+ ar13=np.empty((3,2)); 
+ar13 #Out[21]: array([[ -2.68156159e+154, 1.28822983e-231],  [ 4.22764845e-307, 2.78310358e-309],  [ 2.68156175e+154,
+
+np.array([[1,2],[6,7]]) #Out[334]: array([[1, 2],  [6, 7]]) 
+np.tile(np.array([[1,2],[6,7]]),3) #Out[335]: array([[1, 2, 1, 2, 1, 2],  [6, 7, 6, 7, 6, 7]]) 
+np.tile(np.array([[1,2],[6,7]]),(2,2)) #Out[336]: array([[1, 2, 1, 2],  [6, 7, 6, 7],  [1, 2, 1, 2],  [6, 7, 6, 7]])  
+
+ar=np.array([2,-1,6,3],dtype='float'); 
+ar #Out[50]: array([ 2., -1., 6., 3.]) 
+ar.dtype #Out[51]: dtype('float64') 
+ar=np.array([2,4,6,8]); 
+ar.dtype #Out[52]: dtype('int64') 
+ar=np.array([2.,4,6,8]); 
+ar.dtype #Out[53]: dtype('float64')  
+
+sar=np.array(['Goodbye','Welcome','Tata','Goodnight']); 
+sar.dtype #Out[56]: dtype('S9')  
+
+bar=np.array([True, False, True]); 
+bar.dtype #Out[57]: dtype('bool')  
+f_ar = np.array([3,-2,8.18])  
+f_ar #Out[3]: array([ 3. , -2. , 8.18]) 
+f_ar.astype(int) #Out[4]: array([ 3, -2, 8])  
+
+# print entire array, element 0, element 1, last element. 
+ar = np.arange(5); 
+print(ar);#[0 1 2 3 4]  
+ar[0], ar[1], ar[-1] #Out[36]: (0, 1, 4) # 2nd, last and 1st elements In [65]: ar=np.arange(5); ar[1], ar[-1], ar[0] Out[65]: (1, 4, 0)  
+#The above gives us a tuple.
+
+ar=np.arange(5); 
+ar[1], ar[-1], ar[0] #Out[65]: (1, 4, 0)  
+ar=np.arange(5); 
+ar[::-1] #Out[24]: array([4, 3, 2, 1, 0])  
+ar = np.array([[2,3,4],[9,8,7],[11,12,13]]); 
+ar #Out[71]: array([[ 2, 3, 4],  [ 9, 8, 7],  [11, 12, 13]]) 
+ar[1,1] #Out[72]: 8  
+#Lesson: Tuples can be written without parentheses
+ar[1,1]=5; 
+ar #Out[75]: array([[ 2, 3, 4],  [ 9, 5, 7],  [11, 12, 13]])  
+ar[2] #Out[76]: array([11, 12, 13]) 
+ar[2,:] #Out[77]: array([11, 12, 13])  
+ar[:,1] #Out[78]: array([ 3, 5, 12])  
+ar=2*np.arange(6); 
+ar #Out[82]: array([ 0, 2, 4, 6, 8, 10]) 
+ar[1:5:2] #Out[85]: array([2, 6])  
+#Lesson: Arrays can be sliced using the following syntax: ar[startIndex: endIndex: stepValue] . If step value is missing, it will be assumed as 1.  If endIndex is less than startIndex, empty array will be returned.  If startIndex is not empty, stepValue is negative, it will go down to zero index or endIndex.  In this light, it makes sense the following command reverses the array:
+#a[::-1]
+ar[:4] #Out[91]: array([0, 2, 4, 6])  
+ar[4:] #Out[92]: array([ 8, 10])  
+ar[::3] #Out[94]: array([0, 6])  
+
+b = np.arange(25)
+                 b = b.reshape(5,5)                                                     
+b.ndim #Out[49]: 2                                                                      
+b.shape #Out[50]: (5, 5)                                                                 
+b[0,2:4]#Out[51]: array([2, 3])                                     
+b[:,2:4] #Out[52]: array([[ 2,  3], [ 7,  8], [12, 13], [17, 18], [22, 23]])
+b[2:,2:] #Out array([[12, 13, 14], [17, 18, 19], [22, 23, 24]])
+b[2::2,::2] #Out array([[10, 12, 14], [20, 22, 24]])
+
+
+ar #Out[96]: array([ 0, 2, 4, 6, 8, 10]) 
+ar[:3]=1; 
+ar #Out[100]: array([ 1, 1, 1, 6, 8, 10]) 
+ar[2:]=np.ones(4);
+ar #Out[110]: array([1, 1, 1, 1, 1, 1])  
+ 
+np.random.seed(10)  
+ar=np.random.random_integers(0,25,10); 
+ar #Out[146]: array([ 9, 4, 15, 0, 17, 25, 16, 17, 8, 9]) 
+evenMask=(ar % 2==0); 
+evenMask #Out[147]: array([False, True, False, True, False, False, True, False, True, False], dtype=bool) 
+evenNums=ar[evenMask]; 
+evenNums #Out[148]: array([ 4, 0, 16, 8])  
+ar=np.array(['Hungary','Nigeria',   'Guatemala','','Poland',  '','Japan']); 
+ar #Out[149]: array(['Hungary', 'Nigeria', 'Guatemala',   '', 'Poland', '', 'Japan'],   dtype='|S9') 
+ar[ar=='']='USA'; 
+ar #Out[150]: array(['Hungary', 'Nigeria', 'Guatemala',   'USA', 'Poland', 'USA', 'Japan'], dtype='|S9')  
+ar=11*np.arange(0,10); 
+ar #Out[173]: array([ 0, 11, 22, 33, 44, 55, 66, 77, 88, 99]) 
+ar[[1,3,4,2,7]] #Out[174]: array([11, 33, 44, 22, 77])  
+#Lesson: It is clear why the following notation is used:
+#array[[...]]
+#The inside one is another array (anonymous).
+ar[[1,3]]=50; 
+ar #Out[176]: array([ 0, 50, 22, 50, 44, 55, 66, 77, 88, 99])  
+
+ar=np.arange(15); 
+ar #Out[188]: array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) 
+ar2=np.arange(0,-10,-1)[::-1]; 
+ar2 #Out[193]: array([-9, -8, -7, -6, -5, -4, -3, -2, -1, 0])  
+ar[:10]=ar2; 
+ar #Out[194]: array([-9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 10, 11, 12, 13, 14])  
+
+ar1=np.arange(12); 
+ar1 #Out[118]:array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) 
+ar2=ar1[::2]; 
+ar2 #Out[119]: array([ 0, 2, 4, 6, 8, 10]) 
+ar2[1]=-1; 
+ar1 #Out[120]: array([ 0, 1, -1, 3, 4, 5, 6, 7, 8, 9, 10, 11])  
+
+ar=np.arange(8);
+ar #Out[124]: array([0, 1, 2, 3, 4, 5, 6, 7]) 
+arc=ar[:3].copy(); 
+arc #Out[126]: array([0, 1, 2]) 
+arc[0]=-1; 
+arc #Out[127]: array([-1, 1, 2]) 
+ar #Out[128]: array([0, 1, 2, 3, 4, 5, 6, 7])  
+ a = np.arange(10)                                                      
+             b = a[:5]                                                              
+b #Out[59]: array([0, 1, 2, 3, 4])                                                 
+np.may_share_memory(a, b) #Out[60]: True                                                                   
+c = a[:5].copy() 
+c #Out[62]: array([0, 1, 2, 3, 4])                             
+np.may_share_memory(a, c) #Out[63]: False                                             
+
+ar=np.arange(0,7)*5; 
+ar #Out[196]: array([ 0, 5, 10, 15, 20, 25, 30]) 
+ar=np.arange(5) ** 4 ; 
+ar #Out[198]: array([ 0, 1, 16, 81, 256]) 
+ar ** 0.5 #Out[199]: array([ 0., 1., 4., 9., 16.])  
+
+ar=3+np.arange(0, 30,3); 
+ar #Out[209]: array([ 3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) 
+ar2=np.arange(1,11); 
+ar2 #Out[210]: array([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])  
+ar-ar2 #Out[211]: array([ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) 
+ar/ar2 #Out[212]: array([3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) 
+ar*ar2 #Out[213]: array([ 3, 12, 27, 48, 75, 108, 147, 192, 243, 300])  
+
+
+ar=np.arange(1000)  
+%timeit ar**3  #100000 loops, best of 3: 5.4 µs per loop 
+ar=range(1000)  
+%timeit [ar[i]**3 for i in ar]  #1000 loops, best of 3: 199 µs per loop  
+
+ar=np.array([[1,1],[1,1]]); 
+ar #Out[228]: array([[1, 1],  [1, 1]]) 
+ar2=np.array([[2,2],[2,2]]); 
+ar2 #Out[230]: array([[2, 2],  [2, 2]]) 
+ar.dot(ar2) #Out[232]: array([[4, 4],  [4, 4]])  
+
+ar=np.arange(1,5); 
+ar #Out[235]: array([1, 2, 3, 4]) 
+ar2=np.arange(5,1,-1);
+ar2 #Out[238]: array([5, 4, 3, 2]) 
+ar < ar2 #Out[241]: array([ True, True, False, False], dtype=bool) 
+l1 = np.array([True,False,True,False])  
+l2 = np.array([False,False,True, False])  
+np.logical_and(l1,l2) #Out[242]: array([False, False, True, False], dtype=bool)  
+
+ar=np.array([np.pi, np.pi/2]); 
+np.sin(ar) #Out[244]: array([ 1.22464680e-16, 1.00000000e+00])  
+
+ar=np.array([[1,2,3],[4,5,6]]); 
+ar #Out[249]: array([[1, 2, 3],  [4, 5, 6]]) 
+ar.T #Out[250]:array([[1, 4],  [2, 5],  [3, 6]]) 
+np.transpose(ar) #Out[251]: array([[1, 4],  [2, 5],  [3, 6]])  
+
+ar=np.arange(0,6)  
+ar2=np.array([0,1,2,3,4,5])  
+np.array_equal(ar, ar2) #Out[254]: True  
+np.all(ar==ar2) #Out[24]: True  
+
+ar=np.arange(1,5)  
+ar.prod() #Out[257]: 24  
+
+ar=np.array([np.arange(1,6),np.arange(1,6)]);
+ar #Out[259]: array([[1, 2, 3, 4, 5],  [1, 2, 3, 4, 5]]) 
+# Columns 
+np.prod(ar,axis=0) #Out[261]: array([ 1, 4, 9, 16, 25]) 
+# Rows 
+np.prod(ar,axis=1) #Out[262]: array([120, 120])  
+
+ar=np.array([[2,3,4],[5,6,7],[8,9,10]]); 
+ar.sum() #Out[268]: 54 
+ar.mean() #Out[269]: 6.0 
+np.median(ar) #Out[271]: 6.0  
+
+np.random.seed(10)  
+ar=np.random.randint(0,10, size=(4,5));
+ar #Out[309]: array([[9, 4, 0, 1, 9],  [0, 1, 8, 9, 0],  [8, 6, 4, 3, 0],  [4, 6, 8, 1, 8]]) 
+ar.mean() #Out[310]: 4.4500000000000002 
+ar.std() #Out[311]: 3.4274626183227732 
+ar.var(axis=0) # across rows #Out[312]: array([ 12.6875, 4.1875, 11. , 10.75 , 18.1875]) 
+ar.cumsum() #Out[313]: array([ 9, 13, 13, 14, 23, 23, 24, 32, 41, 41, 49, 55,   59, 62, 62, 66, 72, 80, 81, 89])  
+
+np.random.seed(100)  
+ar=np.random.randint(1,10, size=(4,4));
+ar #Out[320]: array([[9, 9, 4, 8],  [8, 1, 5, 3],  [6, 3, 3, 3],  [2, 1, 9, 5]]) 
+np.any((ar%7)==0) #Out[318]: False 
+np.all(ar<11) #Out[319]: True  
+    
+ar=np.ones([3,2]); 
+ar #Out[357]: array([[ 1., 1.],  [ 1., 1.],  [ 1., 1.]]) 
+ar2=np.array([2,3]); 
+ar2 #Out[358]: array([2, 3]) 
+ar+ar2 #Out[359]: array([[ 3., 4.],  [ 3., 4.],  [ 3., 4.]])  
+#Lesson: the function ones accepts both tuple and list.  Need to verify. It appears to me that it expects a sequence.  A sequence can be a tuple or a list.
+
+ar=np.array([[23,24,25]]); 
+ar #Out[369]: array([[23, 24, 25]]) 
+ar.T #Out[368]: array([[23],  [24],  [25]]) 
+ar.T+ar #Out[370]: array([[46, 47, 48],  [47, 48, 49],  [48, 49, 50]])  
+
+ar=np.array([np.arange(1,6), np.arange(10,15)]); 
+ar #Out[385]: array([[ 1, 2, 3, 4, 5],  [10, 11, 12, 13, 14]]) 
+ar.ravel() #Out[386]: array([ 1, 2, 3, 4, 5, 10, 11, 12, 13, 14]) 
+ar.T.ravel() #Out[387]: array([ 1, 10, 2, 11, 3, 12, 4, 13, 5, 14])  
+#Lesson: You can also use np.flatten , which does the same thing, except that it returns a copy while np.ravel returns a view. 
+
+ar=np.arange(1,16);
+ar #Out[389]: array([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) 
+ar.reshape(3,5) #Out[390]: array([[ 1, 2, 3, 4, 5],  [ 6, 7, 8, 9, 10],  [11, 12, 13, 14, 15]])  
+
+ar=np.arange(5); 
+ar.resize((8,));
+ar #Out[408]: array([0, 1, 2, 3, 4, 0, 0, 0])  
+
+np.resize(ar,(8,)) #Out[38]: array([0, 1, 2, 3, 4, 0, 1, 2])  
+
+ar=np.array([14,15,16]); 
+ar.shape #Out[377]: (3,) 
+ar #Out[378]: array([14, 15, 16]) 
+ar=ar[:, np.newaxis]; 
+ar.shape #Out[379]: (3, 1) 
+ar #Out[380]: array([[14],  [15],  [16]])  
+ar=np.array([[3,2],[10,-1]])  
+ar #Out[43]: array([[ 3, 2],  [10, -1]]) 
+ar.sort(axis=1)  
+ar #Out[44]: array([[ 2, 3],  [-1, 10]])  
+ar=np.array([[3,2],[10,-1]])  
+ar #Out[45]: array([[ 3, 2],  [10, -1]]) 
+ar.sort(axis=0)  
+ar #Out[46]: array([[ 3, -1],  [10, 2]])  
+"""
+Sorting by in-place ( np.array.sort ) and out-of-place ( np.sort ) functions. 
+• Other operations that are available for array sorting include the following: 
+
+
+• np.min() : It returns the minimum element in the array 
+• np.max() : It returns the maximum element in the array 
+• np.std() : It returns the standard deviation of the elements in the array 
+• np.var() : It returns the variance of elements in the array 
+• np.argmin() : It indices of minimum 
+• np.argmax() : It indices of maximum 
+• np.all() : It returns element-wise and all of the elements 
+• np.any() : It returns element-wise or all of the elements 
+"""
+import pandas as pd  
+ser=pd.Series(data, index=idx)  
+
+np.random.seed(100)  
+ser=pd.Series(np.random.rand(7)); 
+ser #Out[466]:0 0.543405  1 0.278369  2 0.424518  3 0.844776  4 0.004719  5 0.121569  6 0.670749  dtype: float64  
+import calendar as cal  
+monthNames=[cal.month_name[i] for i in np.arange(1,6)]  
+months=pd.Series(np.arrange(1,6),index=monthNames);
+months #Out[481]: January 1  February 2  March 3  April 4  May 5  dtype: int64 
+months.index #Out[482]: Index([u'January', u'February', u'March', u'April', u'May'], dtype=object)  
+currDict={'US' : 'dollar', 'UK' : 'pound',   'Germany': 'euro', 'Mexico':'peso',  'Nigeria':'naira',  'China':'yuan', 'Japan':'yen'}  
+currSeries=pd.Series(currDict); 
+currSeries #Out[486]: China yuan  Germany euro  Japan yen  Mexico peso  Nigeria naira  UK pound  US dollar  dtype: object  
+stockPrices = {'GOOG':1180.97,'FB':62.57,   'TWTR': 64.50, 'AMZN':358.69,  'AAPL':500.6}  
+stockPriceSeries=pd.Series(stockPrices,  index=['GOOG','FB','YHOO',   'TWTR','AMZN','AAPL'],  name='stockPrices')  
+stockPriceSeries #Out[488]: GOOG 1180.97  FB 62.57  YHOO NaN  TWTR 64.50  AMZN 358.69  AAPL 500.60  Name: stockPrices, dtype: float64  
+dogSeries=pd.Series('chihuahua', index=['breed','countryOfOrigin',  'name', 'gender'])  
+dogSeries #Out[491]: breed chihuahua  countryOfOrigin chihuahua  name chihuahua  gender chihuahua  dtype: object  
+currDict['China'] #Out[503]: 'yuan' 
+stockPriceSeries['GOOG']=1200.0  
+stockPriceSeries #Out[505]: GOOG 1200.00  FB 62.57  YHOO NaN  TWTR 64.50  AMZN 358.69  AAPL 500.60  dtype: float64  
+stockPriceSeries.get('MSFT',np.NaN) #Out[507]: nan  
+stockPriceSeries[:4] #Out[498]: GOOG 1180.97  FB 62.57  YHOO NaN  TWTR 64.50  dtype: float64  
+stockPriceSeries[stockPriceSeries > 100] #Out[500]: GOOG 1180.97  AMZN 358.69  AAPL 500.60  dtype: float64  
+np.mean(stockPriceSeries) #Out[501]: 433.46600000000001 
+np.std(stockPriceSeries) #Out[502]: 410.50223047384287  
+ser #Out[506]: 0 0.543405  1 0.278369  2 0.424518  3 0.844776  4 0.004719  5 0.121569  6 0.670749  dtype: float64 
+ser*ser #Out[508]: 0 0.295289  1 0.077490  2 0.180215  3 0.713647  4 0.000022  5 0.014779  6 0.449904  dtype: float64 
+np.sqrt(ser) #Out[510]: 0 0.737160  1 0.527607  2 0.651550  3 0.919117  4 0.068694  5 0.348668  6 0.818993  dtype: float64  
+ser[1:] #Out[514]: 1 0.278369  2 0.424518  3 0.844776  4 0.004719  5 0.121569  6 0.670749  dtype: float64 
+ser[1:] + ser[:-2] #Out[516]: 0 NaN  1 0.556739  2 0.849035  3 1.689552  4 0.009438  5 NaN  6 NaN  dtype: float64  
+#In the above, index -2 stands for index 5. Of course, it is not included.
+
+stockSummaries={ 
+'AMZN': pd.Series([346.15,0.59,459,0.52,589.8,158.88],   index=['Closing price','EPS',  'Shares Outstanding(M)',  'Beta', 'P/E','Market Cap(B)']), 
+'GOOG': pd.Series([1133.43,36.05,335.83,0.87,31.44,380.64],  index=['Closing price','EPS','Shares Outstanding(M)',  'Beta','P/E','Market Cap(B)']), 
+'FB': pd.Series([61.48,0.59,2450,104.93,150.92],   index=['Closing price','EPS','Shares Outstanding(M)',  'P/E', 'Market Cap(B)']), 
+'YHOO': pd.Series([34.90,1.27,1010,27.48,0.66,35.36],  index=['Closing price','EPS','Shares Outstanding(M)',  'P/E','Beta', 'Market Cap(B)']), 
+'TWTR':pd.Series([65.25,-0.3,555.2,36.23],  index=['Closing price','EPS','Shares Outstanding(M)',  'Market Cap(B)']),  
+'AAPL':pd.Series([501.53,40.32,892.45,12.44,447.59,0.84],  index=['Closing price','EPS','Shares Outstanding(M)','P/E',  'Market Cap(B)','Beta'])} 
+stockDF=pd.DataFrame(stockSummaries) 
+stockDF=pd.DataFrame(stockSummaries,  index=['Closing price','EPS','Shares Outstanding(M)',  'P/E', 'Market Cap(B)','Beta'],  columns=['FB','TWTR','SCNW']) 
+stockDF=pd.DataFrame(stockSummaries,  index=['Closing price','EPS',  'Shares Outstanding(M)',  'P/E', 'Market Cap(B)','Beta'])
+stockDF.index #Out[527]: Index([u'Closing price', u'EPS',  u'Shares Outstanding(M)',   u'P/E', u'Market Cap(B)', u'Beta'], dtype=object) 
+stockDF.columns #Out[528]: Index([u'AAPL', u'AMZN', u'FB', u'GOOG', u'TWTR',  u'YHOO'], dtype=object)  

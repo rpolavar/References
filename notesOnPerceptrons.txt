@@ -1,0 +1,7 @@
+Perceptron Algorithm
+
+Invented by Frank Rosenblatt. 
+12 years later, in 1969, Marvin Minsky and Seymour Papert proved that single layer perceptrons cannot handle non-linearly separable patterns.
+Single layer perceptrons have the inability of classifying the data that is not linearly separable.
+Multilayer perceptron on the other hand can handle such data much better.
+

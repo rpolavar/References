@@ -1,0 +1,20 @@
+distributional hypothesis: a word is characterized by the company it keeps - John Rupert Firth
+
+Bag of Words does not give importance to the order of the words.  Only word frequencies matter.  Both man bites dog and dog bits man are equal in this representation.
+
+Check out word_cloud package in Python.
+
+The TF-IDF is a measure of the frequency of word occurrence in a document, weighted by the inverse document frequency: the number of documents in which that word appears. The basic idea is simple, if a word appears in lots of documents, it is probably less important then words that appears only in a few documents. Scikit-learn provides a nice interface to calculate TF-IDF, so I'm going to use it in this section.
+
+TF-IDF belongs to bag of words group of algorithms.  I wonder whether it could be argued that this algorithm takes the order into consideration if terms are bigrams or n-grams.  Of course, by this arguement, every bag of words algorithm will be come an order respecting algorithm.
+
+cosine distance: it is insensitive to the total length of the lyric vectors.
+
+Hierarchical clustering: Essentially we start with each band in its own cluster and one by one, join the clusters together, at each step choosing to merge the two clusters which are closest. The result is a tree-like structure known as a dendrogram, with the branches of similar bands closer together in the tree. Below I've plotted the dendrogram that results from clustering the most popular bands.
+
+Hierarchical clustering and Huffman encoding are similar.  It appears that the former is inspired by the latter.
+
+Predictability as a similarity measure: If a classifier confuses two different groups (for example bands more often, then those two groups are more similar.
+
+T-SNE is a technique to reduce the dimensionality.  It is in the same class of algorithms that PCA belongs to.  It is not clear why T-SNE behaves better than PCA by my quick reading.
+

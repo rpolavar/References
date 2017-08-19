@@ -1,0 +1,18 @@
+1. Walk    : Vertices may repeat. Edges may repeat (Closed or Open)
+2. Trail     : Vertices may repeat. Edges cannot repeat (Open)
+3. Circuit : Vertices may repeat. Edges cannot repeat (Closed)
+4. Path     : Vertices cannot repeat. Edges cannot repeat (Open)
+5. Cycle    : Vertices cannot repeat. Edges cannot repeat (Closed)
+
+Observation 1: If vertices cannot repeat, edges cannot repeat too.  However, the other way round is not true.
+
+Observation 2: Tree traversals are DFS when it comes to pre-fix, in-fix and post-fix.  However, level order traversal is BFS.
+
+Observation 3: A connected DAG is a tree.  A DAG can be disconnected.  In this sense, a disconnected DAG is a forest!
+
+There are a bunch of questions that I need to know the answers to.  To pose my questions, I first present a graph with five nodes and four edges.  These nodes are arranged  in the shape of the letter X.  This is a DAG.  The top two nodes can be viewed as root nodes.  In other words, the middle node has two parents and two children!  Here are the questions:
+1. Is the above a DAG?
+2. Is it a tree?
+3. Are there four connected components in the graph presented above?
+4. Are the strongly connected components or weakly connected components?
+5. Can it be understood as the union of two connected components?
