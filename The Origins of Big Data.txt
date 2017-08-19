@@ -1,0 +1,12 @@
+1990, Peter Denning, “Saving All the Bits”, American Scientist
+
+Mr. Denning, in my opinion, introduced the notion of what is possible with Big Data in these following sentences.
+
+“The imperative [for scientists] to save all the bits forces us into an impossible situation”
+
+and he went on to say
+
+“It is possible to build machines that can recognize or predict patterns in data without understanding the meaning of the patterns. Such machines may eventually be fast enough to deal with large data streams in real time.”
+From 
+The Origins of Big Data
+http://www.kdnuggets.com/2017/02/origins-big-data.html?utm_content=buffer0706a&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
