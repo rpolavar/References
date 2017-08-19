@@ -1,0 +1,72 @@
+Laplace Transforms
+Jan 14, 2017
+
+Khan Academy has a good set of videos on Laplace transforms:
+http://www.khanacademy.org/math/differential-equations/laplace-transform/laplace-transform-tutorial/v/laplace-transform-1
+Laplace transforms are one type of transforms which are useful in solving differential equations.   Functions convert one set of numbers to another set.  Transformations convert functions.  Here is a simple transform:
+f(t) = 1
+As for Laplace Transform, the above is written as:
+\int_0^\infty e^{-st} \times 1 dt
+=
+-(1/s) e^{-st}
+\bigg|_0^\infty = 0 - (-(1/s)) = 1/s.
+Now, let us focus on the following example:
+f(t) = e^{at}.
+Once we simplify the things, it will become:
+\int_0^\infty e^{(a-s)t} dt
+This is similar to the previous one.  The only difference is s = s - a.
+Consequently, this becomes:
+1/(s-a).
+Of course, there is one caveat: a has to be less than s otherwise, it will diverge.
+Here is the next example:
+f(t) = \sin(at).
+The above is written as:
+\int_0^\infty e^{-st} \sin(at) dt
+Let the above be denoted by y.
+Applying integration by parts, we have:
+u = e^{-st}
+u' = -s e^{-st}
+v = (-1/a) \cos(at)
+v' = \sin(at)
+Now, we can write:
+-e^{-st} (1/a) \cos(at) - \int_0^\infty -(1/a) \cos(at) (-s e^{-st})dt
+= uv - \int_0^\infty s/a u \cos(at)
+= uv - (s/a) (uw - \int_0^\infty -s/a \sin(at) e^{-st}), where
+u = e^{-st}
+u' = -s e^{-st}
+w = (1/a) \sin(at)
+w' = \cos(at)
+y = uv - (s/a)(uw + (s/a) y)
+= uv - (s/a)uw - (s/a)^2 y
+Rewriting the above, we get:
+y + (s/a)^2 y = uv - (s/a) uw
+y((a^2 + s^2)/a^2) = uv - (s/a)uw
+When t tends to \infty, RHS will become 0.  When t = 0, RHS will become -1/a.  Consequently, 
+y = (a^2/(a^2 + s^2)) (1/a)  
+= a / (s^2+a^2).
+
+Now, let us look at a first derivative of a function:
+f'(t)
+Here, we have:
+u = e^{-st}
+u' = -s e^{-st}
+v = f(t)
+v' = f'(t)
+We have:
+\int_0^\infty u v' dt
+Applying integration by parts, we have:
+u v - \int_0^\infty u' v dt
+= u v - \int_0^\infty -s e^{-st} f(t)dt
+The first term becomes (u v) - f(0).  The later half becomes s \times L(f(t)).  We can write:
+L(f'(t)) = s L(f(t)) - f(0).
+Expanding the above to the second derivative, we have:
+L(f''(t)) = s L(f'(t)) - f'(0)
+Rewriting the above, we have:
+L(f''(t)) = s ( s L(f(t)) - f(0)) - f'(0)
+Simplifying the above, we have:
+L(f''(t)) = s^2 L(f(t)) - sf(0) - f'(0)
+Without going through the details, we can write down the LT for the third derivative:
+L(f'''(t)) = s^3 L(f(t)) - s^2 f(0) - s f'(0) - f''(0)
+Now, let us apply the above to \cos(at).
+Linear operator:
+L(a f(t) + b g(t)) = a L(f(t) + b L(g(t))
