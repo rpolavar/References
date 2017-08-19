@@ -1,0 +1,203 @@
+March 23, 2012 13:32 PM
+Reading on binary trees:
+http://cis.stvincent.edu/carlsond/swdesign/bintrees/bintrees.html
+There are several important points that we need to know here:
+1. Normal binary trees can be used for binary expressions:
+(1+3)*(5-2)
+a. Every non-leaf node contains an operator.
+b. every leaf node contains numbers.
+c. preorder and postorder traversals result in prefix and postfix expressions.
+d. inorder traversal fails to bring back the paranthesis.
+Todo. It is a good idea to play with binary expressions.  I have not done much but once I do it, I shall include the code here.
+
+2. Inserting a sorted list into binary search tree (BST) results in a linked list.  
+a. Understand the problem with the linked lists.  Retrieval is costly.
+b. If we use BST for sorting tree, it will result in O(N^2) algorithm in this worst case of inserting a sorted list.
+c. This is why we need balanced BST.
+
+3. Deleting a node is tricky.
+todo: Write the delete function and include the code here.
+a. While clearing the entire tree in C or C++, it is good idea to release all nodes.  For this, you need to use postorder.  Otherwise, you cannot get to certain parts of the trees.
+
+4. Write the non-recursive versions for various traversal functions (todo).
+
+This lecture is a part of a bigger web based book:
+http://cis.stvincent.edu/html/tutorials/swd/index.html
+Perhaps, I should go through a bit more carefully.  One of the topics that interests me most here is External Sorting.  I have seen enough interview questions on the web related external sorting.
+
+Reading: "How to determine if a binary tree is height-balanced? | GeeksforGeeks"
+http://www.geeksforgeeks.org/archives/5230
+1. Nice and brief definition for AVL trees:
+a. left sub tree should be balanced.
+b. right subtree should be balanced.
+c. The difference between the heights of left subtree and right subtree should not exceed 1.
+Of course, empty is balanced.
+Implementations are good. I may re-write them in Java if time permits (todo).
+
+
+Nick Parlante is a cool dude.  I have read his Python's tutorial and it is very nicely written for a beginner.  Now, I am on his page:
+Binary Trees
+http://cslibrary.stanford.edu/110/BinaryTrees.html
+Before I finished the above page, I went to this page:
+http://cslibrary.stanford.edu/102/PointersAndMemory.pdf
+1. Pointers are needed to pass by reference.  Otherwise, the local copies do not effect the callers values.
+2. Pointers are also needed to return dynamically allocated block.  For this reason alone, one needs to use malloc.
+Now, let us turn to the binary trees:
+1. BST is an ordered binary tree.
+2. Retrieval is lg(N) if the tree is balanced. Better than linked list but worse than hash table or array.
+3. He talks about reference parameters.  He does not use them in the following code:
+/* 
+ Helper function that allocates a new node 
+ with the given data and NULL left and right 
+ pointers. 
+*/ 
+struct node* NewNode(int data) { 
+  struct node* node = new(struct node);    // "new" is like "malloc" 
+  node->data = data; 
+  node->left = NULL; 
+  node->right = NULL; 
+
+  return(node); 
+} 
+  
+
+/* 
+ Give a binary search tree and a number, inserts a new node 
+ with the given number in the correct place in the tree. 
+ Returns the new root pointer which the caller should 
+ then use (the standard trick to avoid using reference 
+ parameters). 
+*/ 
+struct node* insert(struct node* node, int data) { 
+  // 1. If the tree is empty, return a new, single node 
+  if (node == NULL) { 
+    return(newNode(data)); 
+  } 
+  else { 
+    // 2. Otherwise, recurse down the tree 
+    if (data <= node->data) node->left = insert(node->left, data); 
+    else node->right = insert(node->right, data); 
+
+    return(node); // return the (unchanged) node pointer 
+  } 
+} 
+Here is my attempt to rewrite the above with reference parameter:
+/* 
+ Give a binary search tree and a number, inserts a new node 
+ with the given number in the correct place in the tree. 
+*/ 
+void insert(struct node** node, int data) { 
+  // 1. If the tree is empty, return a new, single node 
+  if (*node == NULL) { 
+    *node = newNode(data); 
+  } 
+  else { 
+    // 2. Otherwise, recur down the tree 
+    if (data <= (*node)->data) insert((*node)->left, data); 
+    else insert((*node)->right, data); 
+  } 
+} 
+I had to fix my code above.  Especially, I had to look into reference pointers (Node**).  Finally, I have got the right code in C after having read the following document: 
+http://cslibrary.stanford.edu/103
+Here is the modified code:
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+} Node;
+
+
+/*
+ Give a binary search tree and a number, inserts a new node
+ with the given number in the correct place in the tree.
+*/
+void insert(Node** node, int data) {
+    // 1. If the tree is empty, return a new, single node
+    if (*node == NULL) {
+        *node = (Node*)malloc(sizeof(Node));
+        (*node)->data = data;
+    }
+    else {
+        // 2. Otherwise, recur down the tree
+        if (data <= (*node)->data) insert(&(*node)->left, data);
+        else insert(&(*node)->right, data);
+    }
+}
+
+void inorder(Node* n) {
+    if(n == NULL)
+        return;
+    inorder(n->left);
+    printf("%d\n", n->data);
+    inorder(n->right);
+}
+
+main() {
+    Node* root = NULL;
+    insert(&root, 7);
+    insert(&root, 9);
+    insert(&root, 5);
+    insert(&root, 1);
+    insert(&root, 11);
+    insert(&root, 3);
+    inorder(root);
+    printf("Hello\n");
+}
+By the way, I have used Artistic Style to format the code:
+http://astyle.sourceforge.net/
+
+
+March 24, 2012 8:43 AM
+I have digressed one more time:
+Graph Databases Make Apps Social | Dr Dobb's
+http://drdobbs.com/database/232700167?cid=twitter_
+Of course, there is a tangential connection between this and FB interview!  From the above article, I have found the following paper:
+Graph Databases
+http://www.cse.iitk.ac.in/users/smitr/PhD%20Resources/Graph%20Databases.pdf
+I have given up reading this paper for now that it looks a lot of time for me to understand.  Saved the article in c:\foak.
+
+March 25, 2012 6:27 AM
+Reading Linked List Problem by Nick:
+http://cslibrary.stanford.edu/105/LinkedListProblems.pdf
+	I like this idiom for iterating through linked list instead of using the standard while loop:
+for(current = head; current != NULL; current = current->next)
+I am still enamored by the reference pointers (Node**).  Look at the following function:
+void insert(Node** node, int i) {
+    Node* newNode = malloc(sizeof(Node));
+    newNode->data = i;
+    newNode->next = *node;//4
+    *node = newNode;//5
+}
+Lines 4 and 5 are way cool.  They allow us to insert a value anywhere in the list.  For example, if you feel like inserting a value at the head: you write:
+insert(&head, 42);//Assuming that head is a pointer.
+Now, you feel like inserting at the third place.  Write:
+insert(&head->next->next, 666);
+I think that this is not easy in Java.  In the above, we are inserting "at" a point in the list.  In fact, the proper name for the function should be insertAt.  In java, to accomplish, we need to write a function with "after".  For example, we can have:
+void insertAfter(Node node, int i) {
+    Node newNode = new Node(i);
+    newNode.next = node.next;
+    node.next = newNode;
+}
+Am i missing something? <question>
+
+April 8, 2012 2:57 AM
+Looking at external sort.  The following references are interesting:
+1. CIS Department > Tutorials > Software Design Using C++ > External Sorting
+http://cis.stvincent.edu/html/tutorials/swd/extsort/extsort.html
+2. External sorting - Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/External_sort
+3. kway - Very fast merge sort - Google Project Hosting
+http://code.google.com/p/kway/
+The basic idea is given by the following steps:
+a. Split the original file into several smaller chunks.
+b. Sort each chunk and copy it back to the disk.  Use quick sort since it is fast and it is an in-place sorting algorithm.  You will require half as much space as merge sort requires.
+c. Then, merge the sorted chunks from the previous steps.  Under normal (non-external) circumstances, you will merge two chunks at a time.  However, it is costly because of disk reads and writes.  Therefore, a K-Way merge is good.  For this, you need to use a binary tree (heap).  Whenever an element is popped from the heap, fill the heap with the next element from the corresponding file.
+Finally, there is some discussion on external distribution sort on the Wikipedia page but I have not fully got it.
+The other important thing that dawns on me is that it is good to give a spin to external spin to every question they ask.  Once you finish your algorithm in a regular manner, it will be important to reflect on external nature of that algorithm.  In other words, if the data is too large to fit into memory, will your algorithm work?  
+
+CAP theorem is interesting.  C=Consistency, A=Availability and P=Partition tolerance.  The theorem claims two of the three can be accomplished but not all three simultaneously.  Because of CAP theorem, BASE Basically Available Soft-State Services becomes prominent.
+In the spirit of IO, we must remember why we want to read chunks of a file at a time.  If it is simple summing, try to parallelize the process.  You may want to experiment with various options unless you know everything about IO reads and writes ...  I was reading the answer for this question:
+http://www.careercup.com/question?id=13243679
