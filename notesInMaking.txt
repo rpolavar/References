@@ -1,0 +1,71 @@
+Q. There are three boxes containing oranges alone, apples alone and mixed (both oranges and apples). All three labels are misplaced.  By opening one box, can you figure out the contents of all three boxes?
+a. Open the mixed box.
+If the color of the fruit is orange, for example, you can conclude that the box with the label orange contains apples.
+Q. There are a hundred coins on a table. Ten of them are heads up. By closing eyes, can you divide them two piles and flip a few coins and make sure that both piles have the same number of heads?
+A. Divide the pile into two groups: a contains ten coins and b contains ninety.  Flip ten coin pile.
+The following are the topics that I need to look up:
+Statistics questions
+Replication
+	single-leader
+	(master/slave), multi-leader (master/master) or quorum-based 	replication (
+	Dynamo-style).
+ACID
+ACID database transactions greatly simplify the job of the application developer. As signified by the acronym, ACID transactions provide the following guarantees:
+Atomicity. All of the operations in the transaction will complete, or none will.
+Consistency. The database will be in a consistent state when the transaction begins and ends.
+Isolation. The transaction will behave as if it is the only operation being performed upon the database.
+Durability. Upon completion of the transaction, the operation will not be reversed.
+CAP Theorem
+Eric Brewer, a professor at the University of California, Berkeley, and cofounder and chief scientist at Inktomi, made the conjecture that Web services cannot ensure all three of the following properties at once (signified by the acronym CAP):
+Consistency. The client perceives that a set of operations has occurred all at once.
+Availability. Every operation must terminate in an intended response.
+Partition tolerance. Operations will complete, even if individual components are unavailable.
+The availability of any system is the product of the availability of the components required for operation. 
+BASE
+basically available, soft state, eventually consistent
+vertical scaling
+horizontal scaling
+	functional scaling
+	Sharding
+
+Linearizability
+Mongo DB
+Sharding
+functional scaling = Splitting data within functional areas across multiple databases. 
+NoSQL
+idempotent 
+An operation is considered idempotent if it can be applied one time or multiple times with the same result. Idempotent operations are useful in that they permit partial failures, as applying them repeatedly does not change the final state of the system.
+EDA
+Event Driven Architecture
+One of our tools was establishing four levels of availability engineering: Bronze, Silver, Gold, and Platinum. To earn the Bronze level, a team had to have a risk matrix, have defined SLAs. To earn the Silver level, a team had
+to be monitoring for the problems identified in the matrix and be using game days; Gold meant that the risks were mitigated; and Platinum was like a CMM Level 5 where the systems were self-healing and the focus was on continuous improvement. 
+
+cosine similarity
+feature hashing
+quantile regression, 
+Poisson regression, 
+In the case of noisy problems, Logistic Regression (LR) is the king!
+high variance models are trees.  Obviously, we are overfitting.
+LR on the other hand, is low variance model.  In fact, we ccan call it high bias model.  
+gradient descent and penalty.
+Matrix factorization and recommender systems
+
+if I have very high-dimensional sparse data (e.g. classifying text by topic) with comparably few training examples, I would use a regularized linear model like an SVM or logistic regression. But, if I had large amounts of training examples for a problem with low-dimensional dense data (e.g., speech recognition or vision), I would use a deep net.
+
+For the decision tree, the following concepts need to be understood:
+id3
+information gain
+entropy
+One Class Classifier (OCC) is god!
+It removes the distinction between supervised and unsupervised learning!
+co-training approach
+Kernels
+GAN
+BLEU
+positively skewed
+normalization
+segmentation: geographic, demographic, psychographic and behavioral
+
+
+system-design-primer/README.md at master · donnemartin/system-design-primer · GitHub
+https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md
