@@ -1,0 +1,15 @@
+Here are some of my initial thoughts:
+1. The use case should be sound enough why we need drones but not web-cams.  Here are some of the reasons:
+a. The area that needs to be covered is vast.
+b. Pictures taken from time to time are more than sufficient.  Continuous stream is not needed.
+c. satellite images are not fine-grained enough.  Details in the images matter.
+d. Human supervision is expensive.
+e. Drones can travel underneath trees and take pictures from below too.
+
+2. We must list benefits:
+a. Easy to monitor crops and their health and harvest readiness.
+b. Compare and contrast the pictures from different time periods.
+c. Birds, insects and pests can be observed.  To some extent, this point is covered in point a above when we have mentioned health monitoring.
+d. Is it possible to deliver pesticides?
+e. Is it possible to measure the soil moisture?
+
